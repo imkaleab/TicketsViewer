@@ -3,7 +3,6 @@ import math
 import time
 # Set the request parameters
 count = 0
-urls = []
 user = 'kaleabunited@gmail.com' +'/token'
 pwd = 'lwpUCXiRmglWwug5EBLrpcM41SCza0awetv5AJmb'
 print("\nWelcome to our advanced Ticket Viewer")
@@ -13,7 +12,6 @@ def init():
     counturl = 'https://zccsenior.zendesk.com/api/v2/tickets/count.json'
     response = requests.get(counturl, auth=(user, pwd))
     global count
-    global urls
     
     # Check for HTTP codes other than 200
     if response.status_code != 200:
