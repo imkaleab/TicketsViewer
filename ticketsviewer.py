@@ -96,8 +96,20 @@ def menu():
                         print("\nExiting...\n\n")
                         exit()                    
                     else: print("Invalid choice.")
-            #last page choices            
-                elif(currentPage == lastPage):
+                #if ticket has only one page
+                elif (lastPage == 1):
+                    choice = int(input("1. Display a ticket.\n2. Quit\n\n"))
+                    if (choice == 1):
+                        id = int(input("Please enter ticket ID of ticket: "))
+                        if(id > count['value'] and id < 1):
+                            print("Invalid id number. Returning to main menu.")
+                        else: displayTicket(fetchTicket(id)['ticket'])
+                    elif(choice == 2):
+                        print("\nExiting...\n\n")
+                        exit()
+                    else: print("Invalid choice.") 
+                #last page choices            
+                elif(currentPage == lastPage and lastPage > 1):
                     choice = int(input("1. Previous Page.\n2. Display a ticket.\n3. Quit\n\n"))
                     if (choice == 1):
                         currentPage -= 1
