@@ -13,7 +13,7 @@ init() - initializes the API parameters and makes an API request to figure out t
 menu() - it's an integral part of the application that administers the main menu by displaying choices for the user and adhering to user's choices by facilitating the demands.
 
 fetchTicket(id) - receives a ticket id argument, and makes an API request for details about that ticket which will be returned as a python dict to where the function was invoked.
-
+ 
 fetchQuarter(page) [jump branch] - receives a page number argument and makes an API request for the 100 ticket chunk and slices it up to return the quarter which the page number designates as a python dict.
 
 fetchTickets(url, page) - receives a url and page argument to make an API request to fetch 25 tickets belonging to that page and returns the tickets as a python dict. 
