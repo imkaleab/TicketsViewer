@@ -75,17 +75,15 @@ def fetchPage(page):
         return cache [pageNum:count['value'] if count['value'] <= pageNum+25 else pageNum+25]
 
 def displayTicket(ticket):
-    if(len(ticket) == 0):
-        return
-    print("\nTicket: " + str(ticket['id']) + "\n\nSubject: " + str(ticket['subject']))
-    print("\nDescription: " + str(ticket['description']) + "\n\nCreated on: " + ticket['created_at'])
-
+    if(ticket):
+        print("\nTicket: " + str(ticket['id']) + "\n\nSubject: " + str(ticket['subject']))
+        print("\nDescription: " + str(ticket['description']) + "\n\nCreated on: " + ticket['created_at'])
+    else:  return -1
 def displayTickets(tickets):
-    if(len(tickets) == 0):
-        return
-    if(len(tickets) <= 25):
+    if(len(tickets) <= 25 and len(tickets) >=1):
         for ticket in tickets:
             print("Ticket ID: " + str(ticket['id']) + " subject '" + ticket['subject'] + "' created on " + ticket['created_at'])
+    else:  return
 
 def menu():
     #display menu and facilitate user based on choices
